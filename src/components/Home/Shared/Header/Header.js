@@ -4,15 +4,17 @@ import "./Header.css"
 const Header = () => {
     return (
         <div>
-            <Navbar fixed="top" className="container bg-light">
-            <Container>
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top" className="header bg-light">
+            <Container >
                 <Navbar.Brand className="logo" href="#home">BODY FITNESS</Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                 <Nav className="m-auto">
                 <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#link">Services</Nav.Link>
-                <Nav.Link href="#link">Login</Nav.Link>
+                <Nav.Link href="#services">Services</Nav.Link>
+                <Nav.Link href="#consultancy">Consultancy</Nav.Link>
+                <Nav.Link href="#schedule">Schedule</Nav.Link>
+                <Nav.Link href="#login">Login</Nav.Link>
                 </Nav>
 
                 <Navbar.Text>
