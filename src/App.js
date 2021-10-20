@@ -40,9 +40,6 @@ function App() {
         <Route to="/registration">
           <Register></Register>
           </Route>
-        {/* <Route path="/registration">
-          <Registration></Registration>
-        </Route> */}
         <Route path="*">
           <NotFound></NotFound>
         </Route>
