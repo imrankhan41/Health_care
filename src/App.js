@@ -7,11 +7,18 @@ import NotFound from './components/Home/NotFound/NotFound';
 import Header from './components/Home/Shared/Header/Header';
 import ServiceDetails from './components/Home/ServiceDetails/ServiceDetails';
 import Login from './components/Home/Login/Login';
+import Login1 from './components/Home/Login1/Login1';
+import Register from './components/Home/Register/Register';
+import AuthProvider from './context/AuthProvider';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Membership from './components/Home/Membership/Membership';
+
 
 
 function App() {
   return (
     <div className="App">
+      <AuthProvider>
       <BrowserRouter>
       <Header></Header>
       <Switch>
@@ -21,17 +28,27 @@ function App() {
         <Route path="/home">
           <Home></Home>
         </Route>
-        <Route path="/service/:serviceId">
+        <PrivateRoute path="/service/:serviceId">
           <ServiceDetails></ServiceDetails>
+        </PrivateRoute>
+        <PrivateRoute path="/member">
+          <Membership></Membership>
+        </PrivateRoute>
+      <Route path="/login1">
+        <Login1></Login1>
         </Route>
-      <Route path="/login">
-        <Login></Login>
-        </Route>
+        <Route to="/registration">
+          <Register></Register>
+          </Route>
+        {/* <Route path="/registration">
+          <Registration></Registration>
+        </Route> */}
         <Route path="*">
           <NotFound></NotFound>
         </Route>
       </Switch>
       </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }
